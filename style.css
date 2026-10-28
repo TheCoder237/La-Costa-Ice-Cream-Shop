@@ -244,6 +244,14 @@ nav a:hover {
     border-radius: 16px;
     border: 2px solid #e5e5e5;
 }
+img.menu-category-photo {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    margin: 0 auto 30px;
+    border-radius: 16px;
+}
 
 .menu-category-photo.dessert-gallery {
     max-width: 650px;
@@ -340,6 +348,22 @@ nav a:hover {
     color: #888;
     font-size: 14px;
     font-weight: bold;
+}
+
+.menu-item-photo-placeholder:has(img) {
+    height: auto;
+    margin: 15px 0;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.menu-item-photo-placeholder img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
 }
 
 .menu-item-photo {
@@ -471,6 +495,28 @@ nav a:hover {
 
 .directions-button:hover {
     background-color: var(--turquoise);
+}
+
+.flavor-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.flavor-list span {
+    background-color: var(--cream);
+    padding: 8px 4px;
+    border-radius: 6px;
+    font-size: 13px;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 700px) {
+    .flavor-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 
