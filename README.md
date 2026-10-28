@@ -8,6 +8,7 @@ The site is designed to help customers view the menu, see featured products, cal
 
 - Responsive design for desktop and mobile
 - Homepage with featured products
+- Menu featuring ice cream and Mexican treats
 - Full bilingual-friendly menu
 - Call-to-order functionality
 - Business hours and location
@@ -24,18 +25,19 @@ The site is designed to help customers view the menu, see featured products, cal
 - Responsive Web Design
 - CSS Grid
 - Flexbox
+- Git and GitHub
+- GitHub Pages
 
 ## Project Status
 
-The website is currently in development.
+The website is deployed on GitHub Pages and is currently in development.
 
 Remaining work includes:
 
-- Adding final menu prices
 - Verifying all menu details with the business owner
-- Final testing
+- Completing final testing across desktop and mobile devices
 - Domain setup
-- Hosting and deployment
+- Replacing the placeholder DoorDash link with the business's actual storefront link
 - Future online ordering integration
 
 ## Future Plans
@@ -52,4 +54,7 @@ Future versions may include:
 
 This project was created as a real-world web development project for La Costa Ice Cream Shop.
 
-The goal is to create a simple, mobile-friendly website that makes it easier for customers to discover the business, browse the menu, call ahead, and find the shop.
+The goal is to create a simple, mobile-friendly website that makes it easier for customers to discover the business, browse the menu, call ahead or order through DoorDash, and find the shop.
+
+# Live Website
+([Visit La Costa Ice Cream Shop](https://thecoder237.github.io/La-Costa-Ice-Cream-Shop/))
