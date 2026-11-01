@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Cart | La Costa Ice Cream Shop</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Your Shopping Cart</h1>
+        <a href="menu.html">← Back to Menu</a>
+    </header>
+
+    <main class="cart-container">
+        <h2>Your Items</h2>
+
+        <div id="cartItems"></div>
+
+        <div class="cart-summary">
+            <h3>Order Total: <span id="cartTotal">$0.00</span></h3>
+
+            <button id="checkoutButton" type="button">
+                Proceed to Checkout
+            </button>
+        </div>
+
+        <p id="emptyCartMessage" hidden>
+            Your cart is empty. Return to the menu to add something delicious!
+        </p>
+    </main>
+
+    <script src="cart.js"></script>
+    <script src="cart-page.js"></script>
+
+</body>
+</html>
