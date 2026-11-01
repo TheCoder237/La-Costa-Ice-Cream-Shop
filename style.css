@@ -364,6 +364,7 @@ img.menu-category-photo {
     height: auto;
     object-fit: contain;
     border-radius: 8px;
+    
 }
 
 .menu-item-photo {
@@ -375,6 +376,17 @@ img.menu-category-photo {
     border-radius: 10px;
     background-color: var(--cream);
 }
+/* Make the smoothies image fill the container 
+.smoothies-photo {
+    width: 100%;
+    height: 180px !important;
+    object-fit: contain !important;
+    object-position: center;
+    display: block;
+    border-radius: 8px;
+    background: transparent
+}*/
+
 
 
 /* =========================
