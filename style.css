@@ -292,6 +292,9 @@ img.menu-category-photo {
 }
 
 .menu-item {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
     background-color: var(--white);
     padding: 22px;
     border-radius: 14px;
@@ -299,12 +302,30 @@ img.menu-category-photo {
 }
 
 .menu-item h3 {
+    min-height: 2.4em;
     margin-top: 0;
     color: var(--dark-blue);
 }
 
 .menu-item p {
     line-height: 1.5;
+}
+
+.menu-item > p:not(.price-range) {
+    min-height: 3em;
+}
+
+.menu-item .price-range {
+    color: var(--dark-blue);
+    font-weight: bold;
+    text-align: right;
+}
+
+.menu-item > button {
+    width: 100%;
+    box-sizing: border-box;
+    margin: auto auto 0;
+    text-align: center;
 }
 
 .menu-item span {
@@ -335,8 +356,10 @@ img.menu-category-photo {
 
 .menu-item-photo-placeholder {
     width: 100%;
-    height: 180px;
+    height: 220px;
+    flex: 0 0 220px;
     margin: 15px 0;
+    box-sizing: border-box;
     background-color: var(--cream);
     border: 2px dashed #d6d6d6;
     border-radius: 10px;
@@ -351,8 +374,7 @@ img.menu-category-photo {
 }
 
 .menu-item-photo-placeholder:has(img) {
-    height: auto;
-    margin: 15px 0;
+    height: 220px;
     background: transparent;
     border: none;
     padding: 0;
@@ -361,10 +383,10 @@ img.menu-category-photo {
 .menu-item-photo-placeholder img {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    margin: 0;
     object-fit: contain;
     border-radius: 8px;
-    
 }
 
 .menu-item-photo {
@@ -688,4 +710,1318 @@ img.menu-category-photo {
 .modal-total {
     text-align: center;
     font-size: 18px;
+}
+
+
+/* FLAVOR BUTTONS */
+.flavor-list .flavor-button {
+    background: #fff8ed;
+    color: #493a30;
+    border: 1px solid #e5cdb0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    min-height: 42px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(75, 52, 30, 0.08);
+}
+
+/* HOVER EFFECT */
+.flavor-list .flavor-button:hover {
+    background: #0866a8;
+    color: #ffffff;
+    border-color: #0866a8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(8, 102, 168, 0.2);
+}
+
+/* CLICK EFFECT */
+.flavor-list .flavor-button:active {
+    transform: scale(0.97);
+}
+
+/* KEYBOARD ACCESSIBILITY */
+.flavor-list .flavor-button:focus-visible {
+    outline: 3px solid #e6a84b;
+    outline-offset: 3px;
+}
+
+
+/* BANANA SPLIT MODAL STYLING */
+
+#bananaSplitModal .order-modal-content {
+    background: #fffaf2;
+    color: #493a30;
+    border: 1px solid #e5cdb0;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+#bananaSplitModal h2 {
+    color: #0866a8;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+#bananaSplitModal h3 {
+    color: #0866a8;
+    margin-top: 24px;
+}
+
+#bananaSplitModal label {
+    display: block;
+    font-weight: 600;
+    margin: 12px 0 6px;
+}
+
+#bananaSplitModal select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e5cdb0;
+    border-radius: 9px;
+    background: white;
+    color: #493a30;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+#bananaSplitModal input[type="checkbox"] {
+    accent-color: #0866a8;
+    margin-right: 8px;
+    width: 17px;
+    height: 17px;
+    vertical-align: middle;
+}
+
+#bananaSplitModal label:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff3e2;
+    border: 1px solid #e5cdb0;
+    border-radius: 9px;
+    padding: 11px;
+    cursor: pointer;
+    margin: 8px 0;
+}
+
+#bananaSplitModal #addBananaSplitToCart {
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    background: #0866a8;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#bananaSplitModal #addBananaSplitToCart:hover {
+    background: #064d80;
+    transform: translateY(-2px);
+}
+
+
+/* BUILD YOUR BANANA SPLIT BUTTON */
+
+.banana-split-button {
+    display: inline-block;
+    width: 100%;
+    padding: 13px 18px;
+    margin-top: 15px;
+
+    background: #fff8ed;
+    color: #493a30;
+
+    border: 1px solid #e5cdb0;
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    box-shadow: 0 2px 5px rgba(75, 52, 30, 0.10);
+}
+
+.banana-split-button:hover {
+    background: #0866a8;
+    color: #ffffff;
+    border-color: #0866a8;
+
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(8, 102, 168, 0.2);
+}
+
+.banana-split-button:active {
+    transform: scale(0.97);
+}
+
+.banana-split-button:focus-visible {
+    outline: 3px solid #e6a84b;
+    outline-offset: 3px;
+}
+
+
+/* SHARED ORDERING MODAL DESIGN */
+.order-modal:not(#bananaSplitModal) .order-modal-content {
+    background: #fffaf2;
+    color: #493a30;
+    border: 1px solid #e5cdb0;
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.order-modal:not(#bananaSplitModal) h2 {
+    color: #0866a8;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.order-modal:not(#bananaSplitModal) h3 {
+    color: #0866a8;
+    margin-top: 22px;
+}
+
+.order-modal:not(#bananaSplitModal) label {
+    color: #493a30;
+    font-weight: 600;
+}
+
+.order-modal:not(#bananaSplitModal) select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e5cdb0;
+    border-radius: 9px;
+    background: white;
+    color: #493a30;
+    font-size: 15px;
+}
+
+.order-modal:not(#bananaSplitModal) input[type="radio"],
+.order-modal:not(#bananaSplitModal) input[type="checkbox"] {
+    accent-color: #0866a8;
+    width: 17px;
+    height: 17px;
+}
+
+.order-modal:not(#bananaSplitModal) .quantity-control {
+    margin: 22px 0;
+    gap: 18px;
+}
+
+.order-modal:not(#bananaSplitModal) .quantity-control button {
+    background: #fff3e2;
+    color: #0866a8;
+    border: 1px solid #e5cdb0;
+    border-radius: 8px;
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.order-modal:not(#bananaSplitModal) .modal-total {
+    color: #493a30;
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.order-modal:not(#bananaSplitModal) .modal-total strong {
+    color: #0866a8;
+}
+
+.order-modal:not(#bananaSplitModal)
+.order-modal-content > button:not(.close-modal) {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    background: #0866a8;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.order-modal:not(#bananaSplitModal)
+.order-modal-content > button:not(.close-modal):hover {
+    background: #064d80;
+    transform: translateY(-2px);
+}
+
+
+/* MANGONADA MODAL STYLING */
+#mangonadaModal .order-modal-content {
+    background: #fffaf2;
+    color: #493a30;
+    border: 1px solid #e5cdb0;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+#mangonadaModal h2 {
+    color: #0866a8;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+#mangonadaModal #mangonadaFlavorDisplay {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+#mangonadaModal .quantity-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin: 22px 0;
+}
+
+#mangonadaModal .quantity-control button {
+    background: #fff3e2;
+    color: #0866a8;
+    border: 1px solid #e5cdb0;
+    border-radius: 8px;
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#mangonadaModal .modal-total {
+    color: #493a30;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#mangonadaModal .modal-total strong {
+    color: #0866a8;
+}
+
+#mangonadaModal #addMangonadaToCart {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    background: #0866a8;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#mangonadaModal #addMangonadaToCart:hover {
+    background: #064d80;
+    transform: translateY(-2px);
+}
+
+/* MANGONADA FLAVOR BUTTONS */
+.mangonada-button {
+    background: #fff8ed;
+    color: #493a30;
+    border: 1px solid #e5cdb0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    min-height: 42px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mangonada-button:hover {
+    background: #0866a8;
+    color: white;
+    border-color: #0866a8;
+    transform: translateY(-2px);
+}
+
+
+/* BIONICO BUTTON */
+.bionico-button {
+    display: inline-block;
+    width: 100%;
+    padding: 13px 18px;
+    margin-top: 15px;
+    background: #fff8ed;
+    color: #493a30;
+    border: 1px solid #e5cdb0;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(75, 52, 30, 0.10);
+}
+
+.bionico-button:hover {
+    background: #0866a8;
+    color: #ffffff;
+    border-color: #0866a8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(8, 102, 168, 0.2);
+}
+
+.bionico-button:active {
+    transform: scale(0.97);
+}
+
+.bionico-button:focus-visible {
+    outline: 3px solid #e6a84b;
+    outline-offset: 3px;
+}
+
+/* BIONICO MODAL */
+#bionicoModal .order-modal-content {
+    background: #fffaf2;
+    color: #493a30;
+    border: 1px solid #e5cdb0;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+#bionicoModal h2 {
+    color: #0866a8;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+#bionicoModal .modal-total {
+    color: #493a30;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#bionicoModal .modal-total strong {
+    color: #0866a8;
+}
+
+#bionicoModal #addBionicoToCart {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    background: #0866a8;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#bionicoModal #addBionicoToCart:hover {
+    background: #064d80;
+}
+
+
+/* FRESAS CON CREMA BUTTON */
+.fresas-button {
+    display: inline-block;
+    width: 100%;
+    padding: 13px 18px;
+    margin-top: 15px;
+    background: #fff8ed;
+    color: #493a30;
+    border: 1px solid #e5cdb0;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(75, 52, 30, 0.10);
+}
+
+.fresas-button:hover {
+    background: #0866a8;
+    color: white;
+    border-color: #0866a8;
+    transform: translateY(-2px);
+}
+
+/* FRESAS CON CREMA MODAL */
+#fresasModal .order-modal-content {
+    background: #fffaf2;
+    color: #493a30;
+    border: 1px solid #e5cdb0;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+#fresasModal h2 {
+    color: #0866a8;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+#fresasModal label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff3e2;
+    border: 1px solid #e5cdb0;
+    border-radius: 9px;
+    padding: 11px;
+    cursor: pointer;
+    margin: 8px 0;
+    font-weight: 600;
+}
+
+#fresasModal input[type="checkbox"] {
+    accent-color: #0866a8;
+    width: 17px;
+    height: 17px;
+}
+
+#fresasModal .modal-total {
+    color: #493a30;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#fresasModal .modal-total strong {
+    color: #0866a8;
+}
+
+#fresasModal #addFresasToCart {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    background: #0866a8;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#fresasModal #addFresasToCart:hover {
+    background: #064d80;
+}
+
+
+/* FRUIT COCKTAIL BUTTON */
+.fruit-cocktail-button {
+    display: inline-block;
+    width: 100%;
+    padding: 13px 18px;
+    margin-top: 15px;
+    background: #fff8ed;
+    color: #493a30;
+    border: 1px solid #e5cdb0;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(75, 52, 30, 0.10);
+}
+
+.fruit-cocktail-button:hover {
+    background: #0866a8;
+    color: white;
+    border-color: #0866a8;
+    transform: translateY(-2px);
+}
+
+.fruit-cocktail-button:active {
+    transform: scale(0.97);
+}
+
+/* FRUIT COCKTAIL MODAL */
+#fruitCocktailModal .order-modal-content {
+    background: #fffaf2;
+    color: #493a30;
+    border: 1px solid #e5cdb0;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+#fruitCocktailModal h2 {
+    color: #0866a8;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+#fruitCocktailModal .modal-total {
+    color: #493a30;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#fruitCocktailModal .modal-total strong {
+    color: #0866a8;
+}
+
+#fruitCocktailModal #addFruitCocktailToCart {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    background: #0866a8;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#fruitCocktailModal #addFruitCocktailToCart:hover {
+    background: #064d80;
+}
+
+
+/* AGUAS FRESCAS FLAVOR BUTTONS */
+.aguas-button {
+    background: #fff8ed;
+    color: #493a30;
+    border: 1px solid #e5cdb0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    min-height: 42px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.aguas-button:hover {
+    background: #0866a8;
+    color: white;
+    border-color: #0866a8;
+    transform: translateY(-2px);
+}
+
+/* AGUAS FRESCAS MODAL */
+#aguasModal .order-modal-content {
+    background: #fffaf2;
+    color: #493a30;
+    border: 1px solid #e5cdb0;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+#aguasModal h2 {
+    color: #0866a8;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+#aguasModal label {
+    display: block;
+    font-weight: 600;
+    margin: 12px 0 6px;
+}
+
+#aguasModal select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e5cdb0;
+    border-radius: 9px;
+    background: white;
+    color: #493a30;
+    font-size: 15px;
+}
+
+#aguasModal .modal-total {
+    color: #493a30;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#aguasModal .modal-total strong {
+    color: #0866a8;
+}
+
+#aguasModal #addAguasToCart {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    background: #0866a8;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#aguasModal #addAguasToCart:hover {
+    background: #064d80;
+    transform: translateY(-2px);
+}
+
+
+/* SMOOTHIE FLAVOR BUTTONS */
+.smoothie-button {
+    background: #fff8ed;
+    color: #493a30;
+    border: 1px solid #e5cdb0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    min-height: 42px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.smoothie-button:hover {
+    background: #0866a8;
+    color: white;
+    border-color: #0866a8;
+    transform: translateY(-2px);
+}
+
+/* SMOOTHIE MODAL */
+#smoothieModal .order-modal-content {
+    background: #fffaf2;
+    color: #493a30;
+    border: 1px solid #e5cdb0;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+#smoothieModal h2 {
+    color: #0866a8;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+#smoothieModal #smoothieFlavorDisplay {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+#smoothieModal .modal-total {
+    color: #493a30;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#smoothieModal .modal-total strong {
+    color: #0866a8;
+}
+
+#smoothieModal #addSmoothieToCart {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    background: #0866a8;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#smoothieModal #addSmoothieToCart:hover {
+    background: #064d80;
+    transform: translateY(-2px);
+}
+
+
+/* DETOX AND ENERGETICO BUTTONS */
+.detox-button,
+.energetico-button {
+    display: inline-block;
+    width: 100%;
+    padding: 13px 18px;
+    margin-top: 15px;
+    background: #fff8ed;
+    color: #493a30;
+    border: 1px solid #e5cdb0;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(75, 52, 30, 0.10);
+}
+
+.detox-button:hover,
+.energetico-button:hover {
+    background: #0866a8;
+    color: white;
+    border-color: #0866a8;
+    transform: translateY(-2px);
+}
+
+/* DETOX AND ENERGETICO MODALS */
+#detoxModal .order-modal-content,
+#energeticoModal .order-modal-content {
+    background: #fffaf2;
+    color: #493a30;
+    border: 1px solid #e5cdb0;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+#detoxModal h2,
+#energeticoModal h2 {
+    color: #0866a8;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+#detoxModal .modal-total,
+#energeticoModal .modal-total {
+    color: #493a30;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#detoxModal .modal-total strong,
+#energeticoModal .modal-total strong {
+    color: #0866a8;
+}
+
+#detoxModal #addDetoxToCart,
+#energeticoModal #addEnergeticoToCart {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    background: #0866a8;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#detoxModal #addDetoxToCart:hover,
+#energeticoModal #addEnergeticoToCart:hover {
+    background: #064d80;
+}
+
+
+/* Three-column layout for ingredient removal options */
+.no-options-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.no-options-grid label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.choco-banana-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.choco-banana-grid label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+/* ==============================
+   CHECKOUT PAGE
+================================ */
+
+.checkout-header {
+    background: #1688d0;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+.checkout-header h1 {
+    font-size: 2.5rem;
+    margin: 0 0 5px;
+}
+
+.checkout-header p {
+    margin: 0 0 15px;
+    font-size: 1.1rem;
+}
+
+.checkout-header a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.checkout-header a:hover {
+    text-decoration: underline;
+}
+
+.checkout-container {
+    width: 90%;
+    max-width: 850px;
+    margin: 40px auto;
+}
+
+.checkout-section {
+    background: #ffffff;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+.checkout-section h2 {
+    color: #30383b;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.checkout-section > p {
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px;
+    border: 1px solid #d5d5d5;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #fff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1688d0;
+    box-shadow: 0 0 0 3px rgba(22, 136, 208, 0.12);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Pickup choices */
+
+.pickup-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.pickup-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.pickup-option:has(input:checked) {
+    border-color: #1688d0;
+    background: #f0f8ff;
+}
+
+.pickup-option input {
+    accent-color: #1688d0;
+    width: 18px;
+    height: 18px;
+}
+
+.pickup-option span {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.pickup-option small {
+    color: #777;
+}
+
+/* Order summary */
+
+.checkout-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.checkout-item h3 {
+    margin: 0 0 8px;
+}
+
+.checkout-item p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.checkout-total {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid #eee;
+}
+
+.checkout-total h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+.checkout-total span {
+    color: #1688d0;
+}
+
+.checkout-submit {
+    width: 100%;
+    padding: 16px;
+    margin-top: 15px;
+    background: #1688d0;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.checkout-submit:hover {
+    background: #086eae;
+}
+
+.checkout-payment-note {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 15px;
+}
+
+/* Mobile layout */
+
+@media (max-width: 600px) {
+    .checkout-container {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    .checkout-section {
+        padding: 20px;
+    }
+
+    .pickup-options {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-total h3 {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* Pickup time dropdown */
+
+#pickupTime {
+    width: 100%;
+    padding: 15px 45px 15px 15px;
+    border: 1px solid #d5d5d5;
+    border-radius: 9px;
+    background-color: #ffffff;
+    color: #30383b;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%231688d0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 18px;
+}
+
+#pickupTime:focus {
+    outline: none;
+    border-color: #1688d0;
+    box-shadow: 0 0 0 3px rgba(22, 136, 208, 0.12);
+}
+
+#pickupTime:disabled {
+    background-color: #f5f5f5;
+    color: #999999;
+    cursor: not-allowed;
+}
+
+
+/* ==============================
+   SHOPPING CART PAGE
+================================ */
+
+.cart-container {
+    width: 90%;
+    max-width: 850px;
+    margin: 40px auto;
+}
+
+.cart-container > h2 {
+    font-size: 2rem;
+    color: #30383b;
+    margin-bottom: 25px;
+}
+
+#cartItems {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+#cartItems > div {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+#cartItems h3 {
+    color: #30383b;
+    font-size: 1.25rem;
+    margin: 0 0 10px;
+}
+
+#cartItems p {
+    color: #666;
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+/* Quantity controls */
+
+.cart-quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.cart-quantity-controls button {
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 8px;
+    background: #eaf5fc;
+    color: #1688d0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.cart-quantity-controls button:hover {
+    background: #1688d0;
+    color: white;
+}
+
+.cart-quantity-controls span {
+    font-size: 1.1rem;
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+}
+
+/* Remove button */
+
+#cartItems button:not(.cart-quantity-controls button) {
+    background: #fff0ed;
+    color: #c0392b;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 7px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#cartItems button:not(.cart-quantity-controls button):hover {
+    background: #c0392b;
+    color: white;
+}
+
+/* Cart summary */
+
+.cart-summary {
+    background: #ffffff;
+    padding: 25px;
+    margin-top: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.cart-summary h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    color: #30383b;
+}
+
+#cartTotal {
+    color: #1688d0;
+}
+
+#checkoutButton {
+    width: 100%;
+    padding: 16px;
+    margin-top: 15px;
+    background: #1688d0;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#checkoutButton:hover {
+    background: #086eae;
+}
+
+/* Empty cart */
+
+#emptyCartMessage {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    color: #777;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .cart-container {
+        width: 94%;
+        margin: 25px auto;
+    }
+
+    .cart-summary {
+        padding: 20px;
+    }
+
+    .cart-summary h3 {
+        font-size: 1.15rem;
+    }
+}
+
+
+/* Back to Menu button */
+
+.back-to-menu {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 15px;
+    padding: 11px 20px;
+    background: rgba(255, 255, 255, 0.16);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.back-to-menu:hover {
+    background: white;
+    color: #1688d0;
+    transform: translateY(-2px);
+}
+
+.back-to-menu span {
+    font-size: 1.2rem;
+}
+
+
+/* Checkout header refinements */
+
+.checkout-header {
+    padding: 40px 20px;
+}
+
+.checkout-header h1 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    letter-spacing: -1px;
+}
+
+.checkout-subtitle {
+    font-size: 1.15rem;
+    font-weight: 1000;
+    color: black;
+    margin: 12px 0 18px;
+}
+
+/* Back to Cart button */
+
+.checkout-back-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 11px 22px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.checkout-back-button:hover {
+    background: white;
+    color: #1688d0;
+    transform: translateY(-2px);
+}
+
+.checkout-back-button span {
+    font-size: 1.2rem;
 }

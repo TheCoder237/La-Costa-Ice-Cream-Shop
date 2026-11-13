@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout | La Costa Ice Cream Shop</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="checkout-header">
+        <h1>La Costa Ice Cream Shop</h1>
+        <h2 class="checkout-subtitle">Pickup Order</h2>
+        <a href="cart.html" class="checkout-back-button">
+            <span>←</span> Back to Cart
+        </a>
+    </header>
+
+    <main class="checkout-container">
+
+        <form id="checkoutForm">
+
+            <!-- Customer Information -->
+            <section class="checkout-section">
+                <h2>Customer Information</h2>
+                <p>Enter your contact information below.</p>
+
+                <div class="form-group">
+                    <label for="customerName">Full Name</label>
+                    <input
+                        type="text"
+                        id="customerName"
+                        name="customerName"
+                        placeholder="Your full name"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="customerEmail">Email Address</label>
+                    <input
+                        type="email"
+                        id="customerEmail"
+                        name="customerEmail"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="customerPhone">Phone Number</label>
+                    <input
+                        type="tel"
+                        id="customerPhone"
+                        name="customerPhone"
+                        placeholder="(901) 555-1234"
+                        autocomplete="tel"
+                        required
+                    >
+                </div>
+            </section>
+
+            <!-- Pickup Preference -->
+            <section class="checkout-section">
+                <h2>Pickup Preference</h2>
+                <p>When would you like to pick up your order?</p>
+
+                <div class="pickup-options">
+
+                    <label class="pickup-option">
+                        <input
+                            type="radio"
+                            name="pickupPreference"
+                            value="ASAP"
+                            checked
+                        >
+                        <span>
+                            <strong>Pickup ASAP</strong>
+                            <small>As soon as possible</small>
+                        </span>
+                    </label>
+
+                    <label class="pickup-option">
+                        <input
+                            type="radio"
+                            name="pickupPreference"
+                            value="Future Pickup"
+                        >
+                        <span>
+                            <strong>Future Pickup</strong>
+                            <small>Choose a date and time</small>
+                        </span>
+                    </label>
+
+                </div>
+
+                <!-- Future Pickup Details -->
+                <div id="futurePickupDetails" hidden>
+
+                    <div class="form-group">
+                        <label for="pickupDate">Pickup Date</label>
+                        <input
+                            type="date"
+                            id="pickupDate"
+                            name="pickupDate"
+                            disabled
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pickupTime">Pickup Time</label>
+                        <select
+                            id="pickupTime"
+                            name="pickupTime"
+                            required
+                            disabled
+                        >
+                            <option value="">Choose a pickup time</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="specialInstructions">
+                            Special Instructions
+                        </label>
+                        <textarea
+                            id="specialInstructions"
+                            name="specialInstructions"
+                            rows="4"
+                            placeholder="Any additional requests?"
+                            disabled
+                        ></textarea>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Order Summary -->
+            <section class="checkout-section">
+                <h2>Order Summary</h2>
+
+                <div id="checkoutItems"></div>
+
+                <div class="checkout-total">
+                    <h3>
+                        Order Total:
+                        <span id="checkoutTotal">$0.00</span>
+                    </h3>
+                </div>
+
+                <button type="submit" class="checkout-submit">
+                    Submit Pickup Request
+                </button>
+
+                <p class="checkout-payment-note">
+                    Payment will be made at the shop.
+                </p>
+            </section>
+
+        </form>
+
+    </main>
+
+    <script src="cart.js"></script>
+    <script src="checkout.js"></script>
+
+</body>
+</html>

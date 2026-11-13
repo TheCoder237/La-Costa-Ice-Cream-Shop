@@ -19,10 +19,62 @@ function displayCart() {
         itemName.textContent = item.name;
 
         const itemOptions = document.createElement("p");
-        itemOptions.textContent = item.options;
 
-        const itemQuantity = document.createElement("p");
-        itemQuantity.textContent = `Quantity: ${item.quantity}`;
+        if (Array.isArray(item.options)) {
+            itemOptions.textContent = item.options.join(" • ");
+        } else {
+            itemOptions.textContent = item.options || "";
+        }
+
+        if (!itemOptions.textContent) {
+            itemOptions.hidden = true;
+        }
+
+        const itemQuantity = document.createElement("div");
+        itemQuantity.className = "cart-quantity-controls";
+
+        const decreaseButton = document.createElement("button");
+        decreaseButton.type = "button";
+        decreaseButton.textContent = "-";
+
+        const quantityDisplay = document.createElement("span");
+        quantityDisplay.textContent = item.quantity || 1;
+
+        const increaseButton = document.createElement("button");
+        increaseButton.type = "button";
+        increaseButton.textContent = "+";
+
+        function updateItemQuantity(change) {
+            const updatedCart = getCart();
+        
+            const cartItem = updatedCart.find(
+                cartItem => cartItem.id === item.id
+            );
+        
+            if (!cartItem) return;
+        
+            cartItem.quantity = Math.max(
+                1,
+                (cartItem.quantity || 1) + change
+            );
+        
+            saveCart(updatedCart);
+            displayCart();
+        }
+
+        decreaseButton.addEventListener("click", () => {
+            updateItemQuantity(-1);
+        });
+
+        increaseButton.addEventListener("click", () => {
+            updateItemQuantity(1);
+        });
+
+        itemQuantity.append(
+            decreaseButton,
+            quantityDisplay,
+            increaseButton
+        );
 
         const itemPrice = document.createElement("p");
         itemPrice.textContent =
@@ -53,7 +105,7 @@ function displayCart() {
 
 checkoutButton.addEventListener("click", () => {
     if (getCart().length > 0) {
-        alert("Your cart is ready! We'll set up checkout next.");
+        window.location.href = "checkout.html";
     }
 });
 
