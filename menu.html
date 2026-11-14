@@ -37,7 +37,11 @@
             rel="noopener noreferrer">Instagram</a>
     </nav>
 
-    <main>
+    <main class="menu-with-cart">
+        <button type="button" id="mobileCartButton" class="mobile-cart-button">
+            🛒 View Cart (<span id="mobileCartCount">0</span>)
+        </button>
+        <div class="menu-content">
 
         <!-- MENU INTRO -->
 
@@ -1060,6 +1064,41 @@
             </div>
 
         </section>
+
+        </div>
+
+        <!-- SHOPPING CART SIDEBAR -->
+        <div class="cart-overlay" id="cartOverlay"></div>
+
+        <aside class="cart-sidebar" id="cartSidebar">
+
+            <button type="button" id="closeMobileCart" class="close-mobile-cart">
+                ✕
+            </button>
+
+            <div class="cart-sidebar-header">
+                <h2>🛒 Your Order</h2>
+                <span id="sidebarCartCount">0 items</span>
+            </div>
+
+            <div id="sidebarCartItems" class="sidebar-cart-items">
+                <p class="sidebar-empty-message">
+                    Your cart is empty. Add something delicious!
+                </p>
+            </div>
+
+            <div class="sidebar-cart-summary">
+                <div class="sidebar-cart-total">
+                    <strong>Total</strong>
+                    <strong id="sidebarCartTotal">$0.00</strong>
+                </div>
+
+                <button type="button" id="sidebarCheckoutButton">
+                    Proceed to Checkout
+                </button>
+            </div>
+
+        </aside>
 
     </main>
 

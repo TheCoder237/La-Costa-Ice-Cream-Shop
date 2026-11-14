@@ -1789,3 +1789,4 @@ document.getElementById("addSuperTostidosToCart").addEventListener("click", () =
     addToCart("Super Tostidos", total, options, superTostidosQty);
     superTostidosModal.hidden = true;
 });
+
